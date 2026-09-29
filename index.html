@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha - Cloud AI Chatbot Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Standard Stable CDN -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- Landing Page Preview Context Wrapper -->
+    <div class="mock-website">
+        <header class="site-header">
+            <div class="logo"><i class="fa-solid fa-cloud-bolt"></i> CloudVibe Commerce</div>
+            <nav class="nav-links">
+                <a href="#">Products</a>
+                <a href="#">Pricing</a>
+                <a href="#">Cloud API</a>
+            </nav>
+        </header>
+        <main class="hero-container">
+            <h2>Scalable Infrastructure Solutions</h2>
+            <p>Deploy cloud-native containers instantly with our distributed edge networks.</p>
+            <button class="cta-btn">Explore Console</button>
+        </main>
+    </div>
+
+    <!-- FLOATING ACTION CHAT TRIGGER BUTTON (Z-index and layout boosted) -->
+    <button class="chat-trigger-btn" id="chat-trigger" onclick="toggleChatWindow()">
+        <i class="fa-solid fa-message"></i>
+    </button>
+
+    <!-- MAIN CHAT APPLICATION WIDGET CONTROL INTERFACE -->
+    <div class="chat-widget-window hidden" id="chat-window">
+        <div class="chat-header">
+            <div class="bot-profile-info">
+                <div class="avatar-status-wrapper">
+                    <i class="fa-solid fa-robot"></i>
+                    <span class="status-indicator online"></span>
+                </div>
+                <div>
+                    <h4>CloudBot AI</h4>
+                    <p>Commercial Assistant</p>
+                </div>
+            </div>
+            <button class="close-widget-btn" onclick="toggleChatWindow()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="chat-logs-container" id="chat-logs">
+            <div class="message-wrapper bot">
+                <div class="msg-bubble">
+                    Hello! Welcome to CloudVibe Support. How can I help you optimize your cloud deployment today?
+                </div>
+                <span class="msg-timestamp" id="initial-timestamp">00:00</span>
+            </div>
+        </div>
+
+        <div class="suggestion-pills-row" id="suggestions-grid">
+            <!-- Dynamic selection pills -->
+        </div>
+
+        <form class="chat-input-form" id="chat-input-form" onsubmit="handleMessageSubmit(event)">
+            <input type="text" id="user-msg-input" placeholder="Type your cloud query here..." autocomplete="off" required>
+            <button type="submit" class="send-message-btn" id="send-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
